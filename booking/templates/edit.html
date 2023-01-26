@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block edit %}
+<p>Edit booking of {{ booking.guest }}</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    {% for field in edit_form %}
+    {{field.label_tag}}<br>
+    {{field}}<br>
+ 
+    {% endfor %}
+    <button class="btn btn-dark">Save</button>
+</form>
+<button class="btn btn-dark" >Back</button>
+
+
+{% endblock edit %}

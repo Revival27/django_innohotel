@@ -1,0 +1,9 @@
+﻿asgiref==3.5.2
+mysql-connector-python==8.0.28
+Django==4.1.1
+django-use-email-as-username==1.2.0
+django-rest-authemail==2.1.4
+sqlparse==0.4.2
+tzdata==2022.2
+whitenoise==6.2.0
+django-rest-authemail==2.1.4

@@ -1,0 +1,6 @@
+<!-- File: example-template.html -->
+{{ form.media }}  {# Adds widget's JS/CSS files from CDN #}
+<form method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}  {# Renders form fields using django-bootstrapX #}
+</form>

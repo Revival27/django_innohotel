@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<h4>Registration</h4>
+<form method="POST"> 
+  {% csrf_token %}
+  {% for field in registration_form %}
+  <div class="form-group">
+    {{field.label_tag}}
+    <br>
+    {{field}}<br>
+  </div>
+    {% if field.help_text %}
+    <small style="color:rgb(2, 2, 2);">{{ field.help_text }}</small>
+    {% endif %}
+
+    {% for error in field.errors %}
+    <p style="color:red;">{{ error }}</p>
+    {% endfor %}
+  
+  {% endfor %}
+  <br>
+  <button class="btn btn-dark">Register</button>
+</form>
+{% endblock %}
+

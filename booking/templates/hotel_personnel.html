@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block bookings %}
+<table class="table">
+  <thead>
+    <h2>Room bookings</h2>
+  </thead>
+  <th>
+    <tr>
+      <td>ID</td>
+      <td>Email</td>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Check-in Date</td>
+      <td>Checkout Date</td>
+      <td>Arriving at</td>
+      <td>Leaving at</td>
+      <td>Booking Status</td>
+      <td>Room Status</td>
+      <td>Room ID</td>
+      <td>Edit</td>
+      
+
+      
+    </tr>
+  </th>
+  {% for booking in bookings %}
+  
+  <tr>
+    <td>{{booking.id}}</td>
+    <td>{{booking.guest}}</td>
+    <td>{{booking.first_name}}</td>
+    <td>{{booking.last_name}}</td>
+    <td>{{booking.checkin_date}}</td>
+    <td>{{booking.checkout_date}}</td>
+    <td>{{booking.arrival}}</td>
+    <td>{{booking.leaving}}</td>
+    <td>{{booking.booking_status}}</td>
+    <td>{{booking.room_status}}</td>
+    <td>{{rooms.id}}</td>
+    <td><a href="{% url 'edit' booking.id %}">Edit</a></td>
+  </tr>
+  {% endfor%}
+</table>
+{% endblock bookings %}
+{% block rooms %}
+<table class="table">
+  <thead>
+    <h2>Rooms</h2>
+  </thead>
+  <th>
+    <tr>
+      <td>Room ID</td>
+      <td>Room Number</td>
+      <td>Guest</td>
+      <td>Building</td>
+      <td>Room Status</td>
+      <td>Room Type</td>
+      <td>Lights</td>
+      <td>TV</td>
+      <td>HVAC</td>
+      <td>HVAC Type</td>
+      <td>TEMP</td>
+
+    </tr>
+  </th>
+
+  {% for room in rooms %}
+  <tr>
+    <td>{{room.id}}</td>
+    <td>{{room.room_number}}</td>
+    <td>{{room.booking_id}}</td>
+    <td>{{room.building_id}}</td>
+    <td>{{room.room_status}}</td>
+    <td>{{room.room_type}}</td>
+    <td>{{room.room_lights}}</td>
+    <td>{{room.room_tv}}</td>
+    <td>{{room.HVAC}}</td>
+    <td>{{room.HVAC_type}}</td>
+    <td>{{room.TEMP}}</td>
+
+  </tr>
+  {% endfor%}
+</table>
+{% endblock rooms %}
+
+{% block devices %}
+<table class="table">
+  <thead>
+    <h2>Devices</h2>
+  </thead>
+  <th>
+    <tr>
+      <td>Email</td>
+      <td>Address</td>
+
+    </tr>
+  </th>
+  {% for device in devices %}
+  <tr>
+    <td>{{device.email}}</td>
+    <td>{{device.address}}</td>
+
+  </tr>
+  {% endfor%}
+</table>
+{% endblock devices %}
+
+

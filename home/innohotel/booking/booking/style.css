@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+}
+.container{
+	align-items: center;
+}
+body {
+  align-items: center;
+}
+ul li{
+  list-style-type: none;
+}
+button{
+  margin: 10px;
+}
+.form-booking{
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin{
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.input-group{
+  margin:10px;
+ 
+}
+.form-label{
+  margin: 5px;
+  padding: 5px
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}

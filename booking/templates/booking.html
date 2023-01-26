@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Innohotel Booking  {% endblock %}
+
+{% block content %}
+<form class="form-booking" method="POST">
+  {% csrf_token %}
+  <p>For booking please fill in the form</p>
+
+  {{booking_form.as_p}}
+  
+  <!-- <div class="input-group m-2 p-2">
+    <label for="email" class="form-label">Email Address</label>
+    <input class="form-control" type="email" name="email" required>
+  </div>
+  <div class="input-group">
+    <label for="first_name" class="form-label">First Name</label>
+    <input class="form-control" type="text" name="first_name">
+  </div>
+  <div class="input-group">
+    <label for="last_name" class="form-label">Last Name</label>
+    <input class="form-control" type="text" name="last_name">
+  </div>
+  <div class="input-group">
+    <label for="checkin_date" class="form-label">Check-in date</label>
+    <input class="form-control" type="date" name="checkin_date" id="check-in" required>
+    <label for="arrival" class="form-label">Time of arrival</label>
+    <input class="form-control" type="time" name="arrival">
+  </div>
+    <div class="input-group">
+    <label for="checkout_date" class="form-label">Checkout date</label>
+    <input class="form-control" type="date" name="checkout_date" id="check-out"  required>
+    <label for="leaving" class="form-label">Leaving at</label>
+    <input class="form-control" type="time" name="leaving">
+  </div>
+   -->
+   <!-- {% for error in field.errors %}
+   <p style="color:red;">{{ field.error }}</p>
+   {% endfor %} -->
+
+   {% if booking_form.non_field_errors %}
+   <div style="color:red;">
+     <p>{{booking_form.non_field_errors}}</p>
+   </div>
+   {% endif %}
+  <button class="btn btn-dark" type="submit" value="Submit">Submit</button>
+  
+</form>
+{% endblock %}
+{% block script %}
+
+<script src="/static/datepicker.js"></script>
+{% endblock %}
